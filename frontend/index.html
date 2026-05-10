@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Seating Arrangement Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Exam Seating Generator</h1>
+            <p>Upload student data to automatically generate branch-alternating seating plans.</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>1. Upload Student List</h2>
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="csvFile" accept=".csv" />
+                    <label for="csvFile" class="upload-btn">Choose CSV File</label>
+                    <span id="fileName">No file selected</span>
+                </div>
+                <button id="uploadBtn" class="btn primary" disabled>Upload CSV</button>
+                <div id="uploadStatus" class="status-msg"></div>
+            </section>
+
+            <section class="card">
+                <h2>2. Generate Plan</h2>
+                <div class="input-group">
+                    <label for="examDate">Exam Date:</label>
+                    <input type="date" id="examDate" />
+                </div>
+                <button id="generateBtn" class="btn primary" disabled>Generate Seating Plan</button>
+                <button id="exportBtn" class="btn secondary" style="display: none;">Export to PDF</button>
+            </section>
+
+            <section class="card" id="resultsSection" style="display: none;">
+                <h2>Seating Plan Preview</h2>
+                <div id="planPreview"></div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
